@@ -1,7 +1,7 @@
 {
   "name": "pubsub-swarm",
   "description": "exchange messages with other peers interested in a topic",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "repository": {
     "url": "git://github.com/noffle/pubsub-swarm.git"
   },
