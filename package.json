@@ -1,0 +1,20 @@
+{
+  "name": "pubsub-swarm",
+  "description": "exchange messages with other peers interested in a topic",
+  "version": "0.0.0",
+  "repository": {
+    "url": "git://github.com/noffle/pubsub-swarm.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "dependencies": {
+    "debug": "^2.2.0",
+    "discovery-swarm": "^3.1.2",
+    "secure-gossip": "^0.1.0"
+  },
+  "devDependencies": {
+    "tape": "*"
+  }
+}
