@@ -18,6 +18,8 @@ function Pubsub (topic, opts) {
 
   this.gossip = gossip()
 
+  this.id = this.gossip.keys.public
+
   this.swarm = swarm()
 
   this.swarm.join(topic)
