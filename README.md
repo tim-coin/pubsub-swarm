@@ -76,7 +76,7 @@ Emits when a new message has been received by a peer.
 Publish a message to the rest of the swarm. It will gradually propogate through
 the swarm using [periodic gossip](https://github.com/noffle/secure-gossip).
 
-## install
+## Install
 
 With [npm](https://npmjs.org/) installed, run
 
@@ -84,6 +84,6 @@ With [npm](https://npmjs.org/) installed, run
 $ npm install pubsub-swarm
 ```
 
-## license
+## License
 
 ISC
