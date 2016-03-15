@@ -30,6 +30,7 @@ var swarm = pubsub('foobar')
 
 swarm.on('message', function (msg) {
   console.log('message', msg)
+  process.exit(1)
 })
 
 swarm.on('connected', function () {
@@ -37,23 +38,28 @@ swarm.on('connected', function () {
 })
 ```
 
+Run two copies of this:
+
+```
+$ electron-spawn example.js &
+$ electron-spawn example.js &
+```
+
 Running this in two terminals shows the message exchange:
 
 ```
-$ node example.js
 found + connected to peer
 message { data: 'hello warld from
-ARIwGee//eZNsQ5JfpV/kHQPpNyfO77dW7BdssCaxIw=.ed25519!' }
-^C
+WpiDF+5f+HRTrm2JOmNHTPyGlYGpAN3QNNwwsu3RtbY=.ed25519!' }
+found + connected to peer
+message { data: 'hello warld from
+JxafbAD7qjHCpQY+G/2i1B7vMmBlNTC7HEh9GfP+5yY=.ed25519!' }
 ```
 
-```
-$ node example.js
-found + connected to peer
-message { data: 'hello warld from
-X5dzhP51NbZdF9pc05ImtIzritqYlStPKOYowWOsmvs=.ed25519!' }
-^C
-```
+*(Note that [`electron-spawn`](https://github.com/maxogden/electron-spawn) is
+used instead of `node`. This is to spawn an actual (invisible) Chromium browser
+for the WebRTC parts. There is a native implementation, `wrtc`, but it's still
+not entirely reliable (WebRTC is a very complex protocol)).*
 
 ## API
 
