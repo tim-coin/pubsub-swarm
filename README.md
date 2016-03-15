@@ -30,7 +30,8 @@ var swarm = pubsub('foobar')
 
 swarm.on('message', function (msg) {
   console.log('message', msg)
-  process.exit(1)
+
+  setTimeout(function() { process.exit(0) }, 1000)
 })
 
 swarm.on('connected', function () {
@@ -41,8 +42,8 @@ swarm.on('connected', function () {
 Run two copies of this:
 
 ```
-$ electron-spawn example.js &
-$ electron-spawn example.js &
+$ node example.js &
+$ node example.js &
 ```
 
 Running this in two terminals shows the message exchange:
@@ -55,11 +56,6 @@ found + connected to peer
 message { data: 'hello warld from
 JxafbAD7qjHCpQY+G/2i1B7vMmBlNTC7HEh9GfP+5yY=.ed25519!' }
 ```
-
-*(Note that [`electron-spawn`](https://github.com/maxogden/electron-spawn) is
-used instead of `node`. This is to spawn an actual (invisible) Chromium browser
-for the WebRTC parts. There is a native implementation, `wrtc`, but it's still
-not entirely reliable (WebRTC is a very complex protocol)).*
 
 ## API
 

@@ -1,10 +1,10 @@
-var pubsub = require('pubsub-swarm')
+var pubsub = require('./index')
 
 var swarm = pubsub('foobar')
 
 swarm.on('message', function (msg) {
   console.log('message', msg)
-  process.exit(0)
+  setTimeout(function() { process.exit(0) }, 1000)
 })
 
 swarm.on('connected', function () {
