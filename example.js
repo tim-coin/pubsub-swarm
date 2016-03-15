@@ -1,4 +1,4 @@
-var pubsub = require('./index')
+var pubsub = require('pubsub-swarm')
 
 var swarm = pubsub('foobar')
 
