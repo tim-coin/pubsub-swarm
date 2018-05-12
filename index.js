@@ -16,7 +16,7 @@ function Pubsub (topic, opts) {
 
   EventEmitter.call(this)
 
-  this.gossip = gossip()
+  this.gossip = gossip(opts.gossip)
 
   this.id = this.gossip.keys.public
 
