@@ -1,18 +1,19 @@
 {
-  "name": "pubsub-swarm",
+  "name": "solyd-swarm",
   "description": "exchange messages with other peers interested in a topic",
-  "version": "1.0.0",
+  "version": "0.0.7",
   "repository": {
-    "url": "git://github.com/noffle/pubsub-swarm.git"
+    "url": "git://github.com/jollysean/solyd-swarm.git"
   },
   "main": "index.js",
   "scripts": {
     "test": "tape test/*.js"
   },
   "dependencies": {
+    "datland-swarm-defaults": "^1.0.2",
     "debug": "^2.2.0",
-    "discovery-swarm": "^3.1.2",
-    "secure-gossip": "^0.2.2"
+    "discovery-solyd": "0.0.4",
+    "solyd-gossip": "0.0.1"
   },
   "devDependencies": {
     "tape": "*"

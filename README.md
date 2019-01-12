@@ -1,4 +1,4 @@
-# pubsub-swarm
+# solyd-swarm
 
 > Form a p2p swarm of nodes around a topic and exchange messages.
 
@@ -24,7 +24,7 @@ messages (e.g. if two different peers deliver them).
 ## Example
 
 ```js
-var pubsub = require('pubsub-swarm')
+var pubsub = require('solyd-swarm')
 
 var swarm = pubsub('foobar')
 
@@ -60,7 +60,7 @@ JxafbAD7qjHCpQY+G/2i1B7vMmBlNTC7HEh9GfP+5yY=.ed25519!' }
 ## API
 
 ```js
-var pubsub = require('pubsub-swarm')
+var pubsub = require('solyd-swarm')
 ```
 
 ### var swarm = pubsub(topic)
@@ -76,14 +76,18 @@ Emits when a new message has been received by a peer.
 ### swarm.publish(msg)
 
 Publish a message to the rest of the swarm. It will gradually propogate through
-the swarm using [periodic gossip](https://github.com/noffle/secure-gossip).
+the swarm using [periodic gossip](https://github.com/jollysean/solyd-gossip).
+
+### swarm.leave()
+
+Leave the swarm.
 
 ## Install
 
 With [npm](https://npmjs.org/) installed, run
 
 ```
-$ npm install pubsub-swarm
+$ npm install solyd-swarm
 ```
 
 ## License
